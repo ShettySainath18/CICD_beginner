@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building the Docker image...'
-                    sh 'docker build -t myapp:latest .'
+                     bat 'docker build -t myapp:latest .'
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running tests...'
-                    sh 'docker run --rm myapp:latest '
+                    bat 'docker run --rm myapp:latest'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     echo 'Deploying the application...'
-                    sh 'docker run -d --name myapp_container myapp:latest'
+                    bat 'docker run -d --name myapp_container myapp:latest'
                 }
             }
         }
