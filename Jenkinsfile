@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running tests...'
-                    bat 'docker run --rm myapp:latest ./run_tests.sh'
+                    bat 'docker run --rm myapp:latest'
                 }
             }
         }
