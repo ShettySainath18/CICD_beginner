@@ -1,14 +1,5 @@
-FROM ubuntu
-
-LABEL maintainer="Sainath Shetty <sai@.me>"
-
-USER root
-
-COPY ./entrypoint.bash /
-
-RUN apt -y update
-RUN apt -y install curl bash dos2unix
-RUN chmod 755 /entrypoint.bash
-
-USER nobody
-ENTRYPOINT ["./entrypoint.bash"]
+FROM node:20-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "./src/index.js"]
