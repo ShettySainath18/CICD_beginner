@@ -22,6 +22,8 @@ pipeline {
                 script {
                     echo 'Deploying the application...'
                     bat 'docker run -d --name myapp_container myapp:latest'
+                    sleep(30)
+                    return
                 }
             }
         }
