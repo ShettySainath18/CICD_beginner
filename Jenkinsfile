@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running tests...'
-                    bat 'docker run myapp:latest'
+                    bat 'docker run -p 4000:8000 myapp:latest'
                 }
             }
         }
